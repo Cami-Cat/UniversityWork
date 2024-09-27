@@ -18,16 +18,13 @@ int result{0};
         // Add this input to the result, now input A and input B have been stored as a+b in result.
         result += input;
         cin >> input;
-        // Now input A, B and C are being stored as a+b+c.
         result += input;
         cin >> input;
         // a+b+c+d
         result += input;
 
-
         // Divide the result by the number specified, 4
         result = result / 4;
-
 
         // Print result
         cout << "The average of the chosen integers is (less accurate than float): " << result << endl;
