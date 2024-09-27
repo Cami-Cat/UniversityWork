@@ -3,6 +3,19 @@
 using namespace std;
 
 
+float calculateFarenheit(int celcius){
+    
+    int farenheit = (celcius * 9/5) + 32;
+    return farenheit; 
+
+}
+
+float calculateCelcius(int farenheit){
+    
+    int celcius = (farenheit - 32) * 5 / 9;
+    return celcius;
+}
+
 void main(){
 
     float celcius {0};
@@ -18,43 +31,19 @@ void main(){
     cout << "Is this in C or F?" << endl;
     cin >> type;
 
-            if(type == "c") {
-            celcius = temperature;
+            if(type == "c" || type == "C" || type == "celcius" || type == "Celcius") {
+            // c++ doesn't have a well-made tolower() implementation; Makes checking for lowercase strings agony.
             // Perform the equation to calculate farenheit
-            farenheit = (celcius * 9/5) + 32;
-            // Output the result
+            farenheit = calculateFarenheit(temperature);
             cout << "It's currently: " << farenheit << " degrees Farenheit" << endl;
             return;
             
-            } else 
-            // c++ doesn't have a well-made tolower() implementation that makes checking for lowercase strings agony. Run two
-            if(type == "C") {
-            celcius = temperature;
-            // Perform the equation to calculate farenheit
-            //celcius = (farenheit - 32) * 5 / 9;
-            farenheit = (celcius * 9/5) + 32;
-            // Output the result
-            cout << "It's currently: " << farenheit << " degrees Farenheit" << endl;
-            return;
+            } else if(type == "f" || type == "F" || type == "Farenheit" || type == "farenheit") {
             
-            } if(type == "f") {
-            farenheit = temperature;
             // Perform the equation to calculate celcius
-            celcius = (farenheit - 32) * 5 / 9;
-            // Output the result
+            celcius = calculateCelcius(temperature);
             cout << "It's currently: " << celcius << " degrees Celcius" << endl;
             return;
 
-            } else if(type == "F") {
-            farenheit = temperature;
-            // Perform the equation to calculate celcius
-            celcius = (farenheit - 32) * 5 / 9;
-            // Output the result
-            cout << "It's currently: " << celcius << " degrees Celcius" << endl;
-            return;
-
-            } else {
-                cout << "Please only input 'C' or 'F' and blame C++, not me." << endl;
-                return;
-            }
+            } 
 }
