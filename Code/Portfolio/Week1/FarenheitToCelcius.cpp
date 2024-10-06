@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// Oliver Russell
 
 float calculateFarenheit(int celcius){
     

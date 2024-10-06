@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Oliver Russell
+
 string enemyVisible(int gHealth, int remainingBullets, float distanceFromEnemy) 
 {
 
@@ -15,67 +17,56 @@ string enemyVisible(int gHealth, int remainingBullets, float distanceFromEnemy)
         {
             // if the distance from the enemy is 20 or higher and the guard has bullets, fire.
             action = "Firing!";
-            return action; 
         }
         else if (distanceFromEnemy <= 19 || remainingBullets <= 0)
         {
             // if the distance from the enemy is lower than or equal to 19 OR the guard has no remaining bullets, fight unarmed.
             action = "Unarmed fighting.";
-            return action; 
         }
         else 
         {
             // Return nothing if broken
             cout << "You didn't input a legal value, try again" << endl;
-            return action;
         }
     }
     else if (gHealth <= 9)
     {
-        // if the guard doesn't have enough health to engage in combat with a visible enemy, retreat
+        // if the guard doesn't have enough health to engage in combat with a visible enemy, retreat.
         action = "Retreat!";
-        return action;    
     }
     else 
     {
-        // Return nothing if broken
-        return action;
+        // Do nothing.
     }
+    return action;
 }
 
 string enemyNotVisible(int remainingBullets)
 {
-
     bool visibleEnemy = false;
     string action = " ";
 
-    if (remainingBullets == 0)
-    {
-        // if the guard can see no enemies and is out of bullets, search for ammunition.
-        action = "Searching for ammo...";
-        return action;
-    }
-    else if (remainingBullets >=1)
+    if (remainingBullets >=1)
     {
         // if the guard has bullets remaining and there are no visible enemies, patrol.
         action = "Patrolling...";
-        return action;
     }
     else 
     {
-        return action;
+        // if the guard can see no enemies and is out of bullets, search for ammunition.
+        action = "Searching for ammo...";
     }
+
+    return action;
 }
 
 void main() 
 {
-
     int gHealth{0};
     int remainingBullets{0};
     string visibleEnemySTR = " ";
     bool visibleEnemy = false;
     float distanceFromEnemy{0};
-
 
     cout << "You are controlling a guard, please implement these values:" << endl;
     cout << "The health of your guard (Out of 100): ";
@@ -84,6 +75,7 @@ void main()
     if (gHealth >= 100)
     {
         // clamp the health to a maximum of 100
+        cout << "This value cannot be greater than 100, setting to 100...";
         gHealth = 100;
     }
     else if (gHealth <= 0)
@@ -93,13 +85,13 @@ void main()
         return;
     }
 
-
     cout << "\nThe number of bullets your guard has (Out of 100): ";
     cin >> remainingBullets;
     
     if (remainingBullets >= 100)
     {   
         // You can't have more than 100!
+        cout << "This value cannot be greater than 100, setting to 100...";
         remainingBullets = 100;
     }
     if (remainingBullets <= 0)
@@ -130,6 +122,4 @@ void main()
         cout << "You didn't input a legal choice, please start again." << endl;
         return;
     }
-
-
 }
