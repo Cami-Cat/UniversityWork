@@ -30,37 +30,37 @@ void main()
     cout << average << endl;
 
 
-    if (moduleA <= 40) 
+    if (moduleA <= 39) 
     {
         failedmodule = true;
         cout << "This student has not passed the first module, they do not pass.";
         return;
     }  
-    else if (moduleB <= 40)
+    else if (moduleB <= 39)
     {
         failedmodule = true;
         cout << "This student has not passed the second module, they do not pass.";
         return;
     }
-    else if (moduleC <= 40)
+    else if (moduleC <= 39)
     {
         failedmodule = true;
         cout << "This student has not passed the third module, they do not pass.";
         return;
     }
-    else if (moduleD <= 40)
+    else if (moduleD <= 39)
     {
         failedmodule = true;
         cout << "This student has not passed the fourth module, they do not pass.";
         return;
     }
-    else if (moduleE <= 40)
+    else if (moduleE <= 39)
     {
         failedmodule = true;
         cout << "This student has not passed the fifth module, they do not pass.";
         return;
     }
-    else if (moduleF <= 40)
+    else if (moduleF <= 39)
     {
         failedmodule = true;
         cout << "This student has not passed the sixth module, they do not pass.";
