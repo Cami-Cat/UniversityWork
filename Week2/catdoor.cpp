@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// Oliver Russell
+
 void pressButton(bool innerDoor, bool outerDoor, bool inside)
 {
 
