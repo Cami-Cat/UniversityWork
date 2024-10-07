@@ -81,7 +81,7 @@ void main()
     else if (gHealth <= 0)
     {   
         // if health is lower than legally permissable, kill.
-        cout << "You are dead." << endl;
+        cout << "You are dead. Why did you input " << gHealth << "? Try again." << endl;
         return;
     }
 
@@ -108,18 +108,19 @@ void main()
         // call for enemyVisible with the necessary inputs.
         string action = enemyVisible(gHealth, remainingBullets, distanceFromEnemy);
         cout << action;
-        return;
+
     }
     else if (visibleEnemySTR == "No" || visibleEnemySTR == "no" || visibleEnemySTR == "false" || visibleEnemySTR == "False")
     {
         // call for enemyNotVisible with the necessary inputs.
         string action = enemyNotVisible(remainingBullets);
         cout << action;
-        return;
+
     }
     else 
     {
         cout << "You didn't input a legal choice, please start again." << endl;
-        return;
+
     }
+    return;
 }
